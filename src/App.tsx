@@ -1,25 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import TagsList from "../src/screens/TagsList";
+import { Box, Typography } from "@mui/material";
+import { string } from "./assets/strings";
+import { styles } from "./screens/styles";
 
+const queryClient = new QueryClient();
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <Box style={styles.MainWrapper}>
+        <Typography variant="h3" align="center" style={{ color: "#2F4F4F" }}>
+          {string.MainTitle}
+        </Typography>
+        <TagsList />
+      </Box>
+    </QueryClientProvider>
   );
 }
 
