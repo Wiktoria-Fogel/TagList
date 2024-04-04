@@ -1,16 +1,16 @@
+import { Button } from "@mui/material";
 import { string } from "../assets/strings";
-import AppButton from "../components/AppButton";
 
 export default {
   title: "Button",
-  component: AppButton,
+  component: Button,
 };
 
 export const Default = {
   args: {
     id: "app-button-default",
     variant: "contained",
-    title: string.Save,
+    children: string.Save,
   },
 };
 
@@ -19,7 +19,7 @@ export const Disabled = {
     id: "app-button-disabled",
     variant: "contained",
     disabled: true,
-    title: string.Save,
+    children: string.Save,
   },
 };
 
@@ -27,7 +27,7 @@ export const Error = {
   args: {
     id: "app-button-error",
     variant: "contained",
-    title: string.TryAgain,
+    children: string.TryAgain,
     color: "error",
   },
 };
